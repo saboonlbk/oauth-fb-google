@@ -30,9 +30,12 @@ class Auth extends CI_Controller {
     // Google Client Configuration
 		$gClient = new Google_Client();
 		$gClient->setApplicationName('Google Login');
-		$gClient->setClientId("1018366337925-qrkh8ddjv4l6ur7a71m315nlc5numh48.apps.googleusercontent.com");
-		$gClient->setClientSecret("mD_kltmmltw7VYXm0agtpkzy");
-		$gClient->setRedirectUri("http://localhost/codeigniter-facebook-google-oauth2-login/auth/googleLogin");
+		//ganti dengan client id
+		$gClient->setClientId("");
+		//ganti dengan client secret
+		$gClient->setClientSecret("");
+		//ganti dengan redirectUri
+		$gClient->setRedirectUri("");
 		
 		$google_oauthV2 = new Google_Oauth2Service($gClient);
 
@@ -71,11 +74,12 @@ class Auth extends CI_Controller {
 	{
 		require_once APPPATH . "libraries/Facebook/autoload.php";
 		$fb = new Facebook\Facebook([
-            'app_id' => "998815773872659", // ganti dengan id app di facebook dev
-            'app_secret' => "e3b91ffebdbf35ea7223e1d2622e823e", //ganti dengan secret key di facebook dev
+            'app_id' => "", // ganti dengan id app di facebook dev
+            'app_secret' => "", //ganti dengan secret key di facebook dev
             'default_graph_version' => 'v2.8',
           ]);
-		$redirectUrl = "http://localhost/codeigniter-facebook-google-oauth2-login/index.php/auth/fbLogin";
+		//ganti dengan redirecturl
+		$redirectUrl = "";
 		$permissions = ['email'];
 		$helper = $fb->getRedirectLoginHelper();
 
